@@ -7,7 +7,7 @@ double newton(double (*f)(double), double (*fp)(double), double x0, double tol, 
     double error;
 
     for(int i = 0; i < maxIter; i++) {
-        error = f(x0) / fp(x0)
+        error = f(x0) / fp(x0);
 
         if(fabs(error) <= tol) {
             break;
