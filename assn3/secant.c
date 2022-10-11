@@ -7,8 +7,6 @@ double secant(double (*f)(double), double x0, double x1, double tol, int maxIter
     double x;
 
     for(int i = 0; i < maxIter; i++) {
-        error = f(x0) / fp(x0);
-
         if(fabs(f(x1)) <= tol) {
             break;
         }

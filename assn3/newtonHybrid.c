@@ -17,7 +17,7 @@ double newtonHybrid(double (*f)(double), double (*fp)(double), double x0, double
             break;
         }
 
-        if x > error {
+        if(x > error) {
             c = (a + b) / 2;
             if(f(a) * f(c) < 0) {
                 b = c;

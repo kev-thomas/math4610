@@ -9,7 +9,7 @@ double fixedPoint(double (*f)(double), double x0, double tol, double maxIter) {
 
     while(error > tol && i < maxIter) {
         x1 = f(x0);
-        error = fabs(x1 - x0)
+        error = fabs(x1 - x0);
         x0 = x1;
         i += 1;
     }

@@ -2,6 +2,8 @@
 
 *Note: all code for this assignment is located in `find_root.py`*
 
+[Documentation](github.com/kev-thomas/cs4610/blob/master/assn2/docs/README.md)
+
 ## Task 1
 
 ### Code:
