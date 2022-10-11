@@ -192,7 +192,7 @@ double secantHybrid(double (*f)(double), double x0, double x1, double tol, int m
 
 ## Task 2
 
-### Code (`test.c`)
+### Code (`test.c`):
 
 ```c
 #include <stdio.h>
@@ -224,7 +224,7 @@ int main() {
 
 ## Task 3
 
-### Code (`test.c`)
+### Code (`test.c`):
 
 ```c
 #include <stdio.h>
@@ -270,3 +270,15 @@ int main() {
 0.000000370101308
 0.000005054914321
 ```
+
+
+## Task 4
+
+![Output](./img/task4-1.png)
+
+![Output cont.](./img/task4-2.png)
+
+
+## Task 5
+
+![Output](./img/task5.png)
