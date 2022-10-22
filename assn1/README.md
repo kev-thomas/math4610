@@ -2,8 +2,12 @@
 
 ## Task 1
 
+For this task, I wrote the `find_root` function in python which uses the fixed point
+algorithm to find the root of a function.
+
 ### Code (`task1.py`):
 
+#### `find_root` method:
 ```py
 import numpy as np
 
@@ -26,7 +30,12 @@ def find_root(f, x0, tol, max_iter) -> float:
 
     return x0
 
+```
 
+#### driver code:
+I used the following driver code in the same file so that i could easily run the python module from the command line and test my code with the function f(x) = xe^(-x)
+
+```py
 if __name__ == '__main__':
     f = lambda x: x * (np.e ** (-x))
     x0 = 3
@@ -38,16 +47,23 @@ if __name__ == '__main__':
 
 ### Output:
 
+With the driver code, I ran the python module in the command line as shown below:
+
 ```shell
 % python3 task1.py
 1.3697495288568338e-13
 ```
 
+The returned result is close to 0, which indicates that we're on the right track to being able to find the root using the fixed point method.
+
 
 ## Task 2
 
+For this task, I modified my original function to output a table when you pass `verbose=True` to the function (the verbose parameter is false by default).
+
 ### Code (`task2.py`):
 
+#### `find_root` method:
 ```py
 import sys
 import numpy as np
@@ -74,7 +90,12 @@ def find_root(f, x0, tol, max_iter, verbose: bool = False) -> float:
 
     return x0
 
+```
 
+#### driver code:
+I modified the driver code in the file to check for a verbose flag from the command line so it can pass true or false to the `find_root` method.
+
+```py
 if __name__ == '__main__':
     f = lambda x: x * (np.e ** (-x))
     x0 = 3
@@ -86,6 +107,8 @@ if __name__ == '__main__':
 ```
 
 ### Output:
+
+Using the updated code, I was able to pass the verbose flag in the command line as shown below to receive the following output. The table indicates the current approximation, as well as the error for that iteration.
 
 ```shell
 % python3 task2.py -v
@@ -107,14 +130,18 @@ iteration 15    |  approximation: 1.3697495289E-13  |  error: 1.3697495289E-13
 1.3697495288568338e-13
 ```
 
+From the output we can see that the function is converging towards our root.
+
 
 ## Task 3
 
-### Code (`task2.py`):
+For this task, I modified the code from task 2 to test the fixed point root finding method on points in the range [-3, 7]. 
+
+### Modified driver code:
+
+I used the same `if __name__ == '__main__'` statement so that i could run the the file directly from the command line. The code in this block only executes if that's the main file, so I can avoid copying and pasting the code from task 2 and just import it.
 
 ```py
-import sys
-import numpy as np
 from task2 import find_root
 
 if __name__ == '__main__':
@@ -128,7 +155,7 @@ if __name__ == '__main__':
 ```
 
 ### Output:
-
+From our output we can see that for greater starting values, the root begins to diverge, which isn't ideal at all. 
 ```shell
 % python3 task3.py -v
 iteration 1     |  approximation: 5.7256610770E+01  |  error: 5.7256610770E+01
@@ -230,8 +257,11 @@ iteration 10    |  approximation: 5.8423443879E+00  |  error: 5.8423443879E+00
 
 
 ## Task 4
+For task 4, I developed a root finding method in python that uses the bisection algorithm rather than the fixed point method.
 
 ### Code (`task4.py`):
+
+#### `find_root` method:
 
 ```py
 import sys
@@ -263,8 +293,12 @@ def find_root(f, a, b, tol, verbose: bool = False) -> float:
             print('iteration %-5i |  approximation: %-15.5E  |  error: %-10.5E' % (i, x, error()))
 
     return x
+```
 
+#### Driver code:
+We'll continue to use the same if-statement in case we want to import the function above elsewhere later on. We'll also test the method on 2 different equations.
 
+```py
 if __name__ == '__main__':
     f = lambda x: 10.14 * (np.e ** (-x ** 2)) * np.cos(np.pi / x)
     a = -3
@@ -279,6 +313,7 @@ if __name__ == '__main__':
 ```
 
 ### Output:
+Once again I ran the module directly from the command line as shown below, and I got the following results:
 
 ```shell
 % python3 task4.py -v
@@ -306,8 +341,10 @@ iteration 8     |  approximation: -8.20312E-02     |  error: 5.27344E-02
 iteration 9     |  approximation: -2.92969E-02     |  error: 2.63672E-02
 -0.029296875
 ```
-
+The bisection method worked much quicker than the fixed point method without diverging, which is a good sign.
 
 ## Task 5
 
-[Repository](https://github.com/kev-thomas/math4610)
+For task 5, I created a GitHub repository to host my code and track changes. A convenient place to read all of the docs i write, and it lets me switch between my laptop and desktop as needed. You can view the repository at the link below:
+
+[https://github.com/kev-thomas/math4610]
