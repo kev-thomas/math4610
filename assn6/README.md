@@ -2,7 +2,7 @@
 
 ## Task 1
 
-`INSERT SCAN HERE`
+![Task 1](./task1.jpg)
 
 ## Task 2
 
