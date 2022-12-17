@@ -1,5 +1,6 @@
 # Software Manual
 ### Author: Kevin Thomas
+### URL: [https://github.com/kev-thomas/math4610/blob/master/manual/README.md]
 
 ## Table of Contents
 
