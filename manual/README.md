@@ -1,5 +1,5 @@
 # Software Manual
-### Kevin Thomas
+### Author: Kevin Thomas
 
 ## Table of Contents
 
